@@ -26,6 +26,33 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 25),
         ),
       ),
+      body: _tasksList(),
+      floatingActionButton: _addTaskButton(),
+    );
+  }
+
+  Widget _tasksList() {
+    return ListView(
+      children: [
+        ListTile(
+          title: const Text("Do Washing",
+              style: TextStyle(
+                decoration: TextDecoration.lineThrough,
+              )),
+          subtitle: Text(DateTime.now().toString()),
+          trailing: const Icon(
+            Icons.check_box_outlined,
+            color: Colors.red,
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget _addTaskButton() {
+    return FloatingActionButton(
+      onPressed: () {},
+      child: const Icon(Icons.add),
     );
   }
 }

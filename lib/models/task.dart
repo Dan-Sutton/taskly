@@ -11,9 +11,10 @@ class Task {
 
   factory Task.fromMap(Map task) {
     return Task(
-        content: task["content"],
-        timestamp: task["timestamp"],
-        done: task["done"]);
+      content: task["content"],
+      timestamp: task["timestamp"],
+      done: task["done"],
+    );
   }
 
   Map toMap() {

@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late double _deviceHeight, _deviceWidth;
-
+  String? _newTaskContent;
   _HomePageState();
 
   @override
@@ -60,7 +60,17 @@ class _HomePageState extends State<HomePage> {
     showDialog(
         context: context,
         builder: (BuildContext _context) {
-          return AlertDialog();
+          return AlertDialog(
+            title: const Text("Add new Task! "),
+            content: TextField(
+              onSubmitted: (_value) {},
+              onChanged: (_value) {
+                setState(() {
+                  _newTaskContent = _value;
+                });
+              },
+            ),
+          );
         });
   }
 }
